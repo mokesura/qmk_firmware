@@ -1,5 +1,5 @@
 /*
-Copyright 2021 Chinatsu
+Copyright 2021 Chinatsu Chiba (azulee/mokesura)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,10 +21,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0xFEED
-#define PRODUCT_ID   0x0000
+#define PRODUCT_ID   0xCC00
 #define DEVICE_VER   0x0001
-#define MANUFACTURER Chinatsu
-#define PRODUCT      cc_proto
+#define MANUFACTURER Chinatsu Chiba (azulee/mokesura)
+#define PRODUCT      CC Proto
 
 /* key matrix size */
 #define MATRIX_ROWS 4
