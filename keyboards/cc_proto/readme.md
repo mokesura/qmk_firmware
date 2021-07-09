@@ -4,7 +4,7 @@
 
 *A short description of the keyboard/project*
 
-* Keyboard Maintainer: [Chinatsu](https://github.com/yourusername)
+* Keyboard Maintainer: [Chinatsu Chiba (azulee/mokesura)](https://github.com/mokesura)
 * Hardware Supported: *The PCBs, controllers supported*
 * Hardware Availability: *Links to where you can find this hardware*
 
