@@ -23,58 +23,56 @@ enum layer_names {
     _FN3
 };
 
-// Defines the keycodes used by our macros in process_record_user
-enum custom_keycodes {
-    QMKBEST = SAFE_RANGE,
-    QMKURL
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Base */
   [_BASE] = LAYOUT(
-      KC_A, KC_B, KC_C, KC_D ,
-      KC_E, KC_F, KC_G, KC_H ,
-      KC_1, KC_2, KC_3, KC_4 , KC_5 ,
-      KC_6, KC_7, KC_8, KC_9 , KC_0
+      KC_A, KC_B, KC_C, KC_D,
+      KC_E, KC_F, KC_G, KC_H,
+      KC_1, KC_2, KC_3, KC_4, TO(_FN1),
+      KC_6, KC_7, KC_8, KC_9, KC_0
     ),
   [_FN1] = LAYOUT(
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_5, TO(_FN2),
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
   [_FN2] = LAYOUT(
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_6, TO(_FN3),
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
   [_FN3] = LAYOUT(
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_7, TO(_BASE),
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     )
 };
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case QMKBEST:
-            if (record->event.pressed) {
-                // when keycode QMKBEST is pressed
-                SEND_STRING("QMK is the best thing ever!");
-            } else {
-                // when keycode QMKBEST is released
-            }
-            break;
-        case QMKURL:
-            if (record->event.pressed) {
-                // when keycode QMKURL is pressed
-                SEND_STRING("https://qmk.fm/\n");
-            } else {
-                // when keycode QMKURL is released
-            }
-            break;
-    }
-    return true;
+// RGB Layer Setting
+const rgblight_segment_t PROGMEM rgb_base_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_RED});
+const rgblight_segment_t PROGMEM rgb_fn1_layer[]  = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_BLUE});
+const rgblight_segment_t PROGMEM rgb_fn2_layer[]  = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_GREEN});
+const rgblight_segment_t PROGMEM rgb_fn3_layer[]  = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_WHITE});
+
+const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    rgb_base_layer,
+    rgb_fn1_layer,
+    rgb_fn2_layer,
+    rgb_fn3_layer
+);
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, _BASE));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _FN1 ));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _FN2 ));
+    rgblight_set_layer_state(3, layer_state_cmp(state, _FN3 ));
+    return state;
+}
+
+// キーボード初期化後に呼ばれる関数
+void keyboard_post_init_user(void) {
+    rgblight_layers = rgb_layers; // レイヤーのLED情報を読み込み
 }
