@@ -5,7 +5,7 @@
 CC Proto is a 18-key keyboard with a reversible design.
 
 - Keyboard Maintainer: [Chinatsu Chiba (azulee/mokesura)](https://github.com/mokesura) / [Twitter](https://twitter.com/azulee)
-- Hardware Supported: [CC Proto PCB](CC Proto), Pro Micro
+- Hardware Supported: [CC Proto PCB](https://github.com/mokesura/cc_proto/blob/main/pcb), Pro Micro
 - Hardware Availability: [CC Proto Repository](https://github.com/mokesura/cc_proto)
 
 Make example for this keyboard (after setting up your build environment):
