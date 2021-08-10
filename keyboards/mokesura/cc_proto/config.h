@@ -38,14 +38,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-/* RGB Light*/
-#define RGB_DI_PIN D3
-#ifdef RGB_DI_PIN
-#    define RGBLED_NUM 1
-#    define RGBLIGHT_LIMIT_VAL 60 /* The maximum brightness level */
-#    define RGBLIGHT_LAYERS
-#endif
-
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
 
