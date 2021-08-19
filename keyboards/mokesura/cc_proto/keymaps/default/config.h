@@ -1,3 +1,5 @@
+#pragma once
+
 /* RGB Light*/
 #define RGB_DI_PIN D3
 #ifdef RGB_DI_PIN
