@@ -49,29 +49,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     )
 };
-
-// RGB Layer Setting
-const rgblight_segment_t PROGMEM rgb_base_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_RED});
-const rgblight_segment_t PROGMEM rgb_fn1_layer[]  = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_GREEN});
-const rgblight_segment_t PROGMEM rgb_fn2_layer[]  = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_BLUE});
-const rgblight_segment_t PROGMEM rgb_fn3_layer[]  = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_WHITE});
-
-const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    rgb_base_layer,
-    rgb_fn1_layer,
-    rgb_fn2_layer,
-    rgb_fn3_layer
-);
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state, _BASE));
-    rgblight_set_layer_state(1, layer_state_cmp(state, _FN1 ));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _FN2 ));
-    rgblight_set_layer_state(3, layer_state_cmp(state, _FN3 ));
-    return state;
-}
-
-// キーボード初期化後に呼ばれる関数
-void keyboard_post_init_user(void) {
-    rgblight_layers = rgb_layers; // レイヤーのLED情報を読み込み
-}
