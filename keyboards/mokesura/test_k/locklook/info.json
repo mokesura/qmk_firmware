@@ -1,0 +1,37 @@
+{
+    "manufacturer": "Chinatsu Chiba (azulee/mokesura)",
+    "keyboard_name": "Lock Look",
+    "maintainer": "mokesura",
+    "bootloader": "caterina",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true,
+        "via": true,
+        "rgblight": true
+    },
+    "matrix_pins": {
+        "cols": ["D1", "D0", "D4"],
+        "rows": ["F6"]
+    },
+    "processor": "atmega32u4",
+    "url": "http://github.com/mokesura/locklook",
+    "usb": {
+        "device_version": "1.0.0",
+        "pid": "0xCC02",
+        "vid": "0x1209"
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+              { "matrix": [0, 0], "x": 0, "y": 0 },
+              { "matrix": [0, 1], "x": 1, "y": 0 },
+              { "matrix": [0, 2], "x": 2, "y": 0 }
+            ]
+        }
+    },
+}
