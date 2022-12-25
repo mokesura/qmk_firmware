@@ -9,8 +9,10 @@
         "console": false,
         "extrakey": true,
         "mousekey": true,
+        "midi": true,
+        "unicode": true,
         "nkro": true,
-        "via": true
+        "combo": false
     },
     "matrix_pins": {
         "direct": [
@@ -19,8 +21,7 @@
         ]
     }
     "processor": "atmega32u4",
-    "url": "",
-    "url": "",
+    "url": "https://github.com/mokesura/cc_practice",
     "usb": {
         "device_version": "1.0.0",
         "pid": "0xCC01",

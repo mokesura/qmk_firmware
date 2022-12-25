@@ -1,12 +1,15 @@
-# mokesura/cc_practice
+# CC Practice
 
 ![mokesura/cc_practice](imgur.com image replace me!)
 
-*A short description of the keyboard/project*
+This is a simple card-sized keyboard.  
+In order to play TTRPG online, we have added the ability to do die rolls.  
+If you want to use the dice roll feature on this keyboard, please compile it with the key codes USER00 - USER08.  
+Note that these key codes were created assuming that the language setting of your computer is Japanese.
 
 * Keyboard Maintainer: [Chinatsu Chiba (azulee/mokesura)](https://github.com/mokesura)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+* Hardware Supported: CC Practice PCB rev1
+* Hardware Availability: [GitHub](https://github.com/mokesura/cc_practice)
 
 Make example for this keyboard (after setting up your build environment):
 
