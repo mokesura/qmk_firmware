@@ -33,7 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Keyboard Matrix Assignments */
 #define MATRIX_ROW_PINS { B5,B4,E6,D7 }
 #define MATRIX_COL_PINS { B6,B2,B3,B1,F7 }
-#define UNUSED_PINS
+//#define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -47,5 +47,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LOCKING_RESYNC_ENABLE
 
 /* disable these deprecated features by default */
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+//#define NO_ACTION_MACRO
+//#define NO_ACTION_FUNCTION
